@@ -19,8 +19,6 @@ public class ShowMenuOptions extends JFrame {
      */
     public ShowMenuOptions() {
         // 主菜单的框架
-
-        setLayout(new BorderLayout());
         JFrame menuFrame = new JFrame("图书管理系统");
         menuFrame.setVisible(false);
         menuFrame.setSize(800, 400);
@@ -65,7 +63,7 @@ public class ShowMenuOptions extends JFrame {
         passwdPanel.add(passwordS);
         menuContainer.add(passwdPanel);
 
-        // 创建登入容器
+        // 创建登入面板
         JPanel loginInPanel = new JPanel();
         JButton loginButton = new JButton("登陆");
         loginInPanel.add(loginButton);
