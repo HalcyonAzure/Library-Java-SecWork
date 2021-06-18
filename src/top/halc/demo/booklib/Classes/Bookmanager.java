@@ -25,7 +25,7 @@ public class Bookmanager{
 		b1.addActionListener(new ActionListener(){//给按钮加个监听器，点击按钮关闭窗口
 			public void actionPerformed(ActionEvent e){
 				try {
-					new Addbook();
+					new AddBook();
 				} catch (ClassNotFoundException | SQLException e1) {
 					e1.printStackTrace();
 				}
@@ -34,7 +34,7 @@ public class Bookmanager{
 		b2.addActionListener(new ActionListener(){//给按钮加个监听器，点击按钮关闭窗口
 			public void actionPerformed(ActionEvent e){
 				try {
-					new Deletebook();
+					new DeleteBook();
 				} catch (ClassNotFoundException | SQLException e1) {
 					e1.printStackTrace();
 				}

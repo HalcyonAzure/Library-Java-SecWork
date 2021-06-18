@@ -3,7 +3,6 @@ package top.halc.demo.booklib.Classes;
 import java.awt.Container;
 import java.awt.Font;
 import java.awt.GridLayout;
-import java.awt.BorderLayout;
 import java.awt.TextField;
 import java.awt.event.ActionListener;
 import java.awt.event.*;
@@ -13,7 +12,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 
-public class ShowMenuOptions extends JFrame {
+public class ShowMenuOptions extends Error {
     /**
      * 对主菜单的GUI进行编辑操作
      */
@@ -43,7 +42,7 @@ public class ShowMenuOptions extends JFrame {
 
         // 生成用户名版面
         JPanel userNamePanel = new JPanel();
-        JLabel userNameString = new JLabel("用户名");
+        JLabel userNameString = new JLabel("管理ID  ");
         //在版面内添加用户名信息
         userNamePanel.add(userNameString);
         TextField idS = new TextField(20);
@@ -53,7 +52,7 @@ public class ShowMenuOptions extends JFrame {
 
         // 生成密码填充版面，和用户名面板同理
         JPanel passwdPanel = new JPanel();
-        JLabel passwdString = new JLabel("密码");
+        JLabel passwdString = new JLabel("管理密码");
         passwdPanel.add(passwdString);
         // 创建的为密码输入框
         JPasswordField passwordS = new JPasswordField(15);

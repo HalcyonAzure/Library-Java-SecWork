@@ -11,7 +11,7 @@ public class Customer {
         // 创建用户界面的框架
         JFrame customer = new JFrame("用户界面");
         customer.setVisible(true);//窗口可见
-        customer.setSize(200, 400);
+        customer.setSize(420, 250);
         customer.setLocation(900, 200);
 
         // 生成容器并且添加对应的组件
@@ -30,7 +30,6 @@ public class Customer {
 
 
         // 添加两个框，一个是搜索书本，一个是搜索用户
-
         // 书本的Panel
         JPanel bookSearchPanel = new JPanel();
         JButton bookSearch = new JButton("书本搜索");
@@ -39,7 +38,13 @@ public class Customer {
         bookSearchPanel.add(bookName);
         customerCon.add(bookSearchPanel);
 
-        //
+        // 用户的Panel
+        JPanel userSearchPanel = new JPanel();
+        JButton userSearch = new JButton("用户搜索");
+        userSearchPanel.add(userSearch);
+        TextField userName = new TextField(20);
+        userSearchPanel.add(userName);
+        customerCon.add(userSearchPanel);
 
         // 添加书库的按钮，打开以后直接查阅书籍，和退出共用同一个bookPanel
         JPanel bookPanel = new JPanel();
