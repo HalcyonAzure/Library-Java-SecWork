@@ -14,7 +14,7 @@ public class UserLogin {
         User u  =null;
         try{
             String driverName = "com.mysql.cj.jdbc.Driver";
-            String dbURL = "jdbc:mysql://lt.halc.top:3306/runoob";
+            String dbURL = "jdbc:mysql://your.server.ip:3306/runoob";
             String userName = "RUNOOB";
             String userPwd = "123456";
             Class.forName(driverName);

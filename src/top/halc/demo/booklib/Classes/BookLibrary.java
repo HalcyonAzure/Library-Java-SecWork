@@ -16,7 +16,7 @@ public class BookLibrary {
 	 */
 	public BookLibrary() throws SQLException, ClassNotFoundException {
 		String driverName="com.mysql.cj.jdbc.Driver";
-		String dbURL="jdbc:mysql://lt.halc.top:3306/runoob";
+		String dbURL="jdbc:mysql://your.server.ip:3306/runoob";
 		String userName="RUNOOB";
 		String userPwd="123456";
 		// 传入数据库的参数数值

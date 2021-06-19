@@ -15,7 +15,7 @@ public class DBUtils {
         ResourceBundle rb  = ResourceBundle.getBundle("dbinfo");
         // 进行赋值操作；
         DriverClass   = rb.getString("com.mysql.cj.jdbc.Driver");
-        url  = rb.getString("jdbc:mysql://lt.halc.top:3306/runoob");
+        url  = rb.getString("jdbc:mysql://your.server.ip:3306/runoob");
         user = rb.getString("RUNOOB");
         password = rb.getString("123456");
         try {
