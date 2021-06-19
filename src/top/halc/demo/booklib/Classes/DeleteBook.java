@@ -16,7 +16,7 @@ public class DeleteBook {
 	public DeleteBook() throws SQLException, ClassNotFoundException {
 		JFrame f=new JFrame("É¾³ýÊé±¾");
 		f.setVisible(true);
-		f.setSize(250,100);
+		f.setSize(400,100);
 		f.setLocation(400, 200);
 		Container con1=f.getContentPane();
 		con1.setLayout(new GridLayout(1,1));

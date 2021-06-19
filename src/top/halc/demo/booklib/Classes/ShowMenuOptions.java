@@ -1,5 +1,7 @@
 package top.halc.demo.booklib.Classes;
 
+import lombok.SneakyThrows;
+
 import java.awt.Container;
 import java.awt.Font;
 import java.awt.GridLayout;
@@ -12,7 +14,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 
-public class ShowMenuOptions extends Error {
+public class ShowMenuOptions {
     /**
      * 对主菜单的GUI进行编辑操作
      */
@@ -28,7 +30,7 @@ public class ShowMenuOptions extends Error {
         Container menuContainer = menuFrame.getContentPane();
         // 获取当前窗口的内容窗格，并且设置窗格的格式内容
         //GridLayout网格布局，几行几列。
-        GridLayout gridLayout = new GridLayout(6,1,1,1);
+        GridLayout gridLayout = new GridLayout(6, 1, 1, 1);
         menuContainer.setLayout(gridLayout);
 
         // 创建一个版面用于展示登入系统的信息
@@ -42,7 +44,7 @@ public class ShowMenuOptions extends Error {
 
         // 生成用户名版面
         JPanel userNamePanel = new JPanel();
-        JLabel userNameString = new JLabel("管理ID  ");
+        JLabel userNameString = new JLabel("用户名");
         //在版面内添加用户名信息
         userNamePanel.add(userNameString);
         TextField idS = new TextField(20);
@@ -52,7 +54,7 @@ public class ShowMenuOptions extends Error {
 
         // 生成密码填充版面，和用户名面板同理
         JPanel passwdPanel = new JPanel();
-        JLabel passwdString = new JLabel("管理密码");
+        JLabel passwdString = new JLabel("  密码  ");
         passwdPanel.add(passwdString);
         // 创建的为密码输入框
         JPasswordField passwordS = new JPasswordField(15);
@@ -68,16 +70,23 @@ public class ShowMenuOptions extends Error {
         loginInPanel.add(loginButton);
         // 给按钮加个监听器，点击按钮切换窗口
         loginButton.addActionListener(new ActionListener() {
+            @SneakyThrows
             @Override
             public void actionPerformed(ActionEvent e) {
-                String adminUser = idS.getText();
-                String adminPassword = passwordS.getText();
+                String user = idS.getText();
+                String password = passwordS.getText();
+                User loginUser = new User(user, password);
+                UserLogin loginCheck = new UserLogin();
+                User checkUser;
+                checkUser = loginCheck.findUser(loginUser);
                 // 管理员的账号密码均为admin
-                if (adminUser.equals("admin") && adminPassword.equals("admin")) {
+                if (loginUser.checkAdmin()) {
                     new Manage();
+                } else if (checkUser != null) {
+                    new Customer_Information();
                 } else {
                     new Error();
-                    System.out.println("密码或用户名错误");
+                    System.out.println("登入失败");
                 }
             }
         });
@@ -98,7 +107,7 @@ public class ShowMenuOptions extends Error {
 
         // 借书还书界面
         JPanel bookLib = new JPanel();
-        JButton logLib = new JButton("借、还书界面");
+        JButton logLib = new JButton("信息查询界面");
         logLib.addActionListener(new ActionListener() {
             // 给按钮加个监听器，点击按钮切换到顾客窗口
             @Override

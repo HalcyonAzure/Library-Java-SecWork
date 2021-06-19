@@ -1,7 +1,7 @@
 package top.halc.demo.booklib.Application;
 import java.sql.*;
+import top.halc.demo.booklib.Classes.*;
 
-import top.halc.demo.booklib.Classes.ShowMenuOptions;
 public class Main {
 	public static void main(String [] args)
 	{
@@ -18,6 +18,7 @@ public class Main {
 		}
 		catch(Exception e)
 		{
+			new ErrorConnection();
 			e.printStackTrace();
 			System.out.print("¡¨Ω” ß∞‹");
 		}

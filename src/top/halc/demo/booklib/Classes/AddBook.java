@@ -105,7 +105,6 @@ public class AddBook {
                 try {
                     String driverName = "com.mysql.cj.jdbc.Driver";
                     String dbURL = "jdbc:mysql://lt.halc.top:3306/runoob";
-                    ;
                     String userName = "RUNOOB";
                     String userPwd = "123456";
                     String sql = "insert into Blibrary values(?,?,?,?,?,?);";
